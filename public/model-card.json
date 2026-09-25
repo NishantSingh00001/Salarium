@@ -1,0 +1,568 @@
+{
+ "trained": "2026-09-25",
+ "source": "Stack Overflow Developer Survey 2025 (ODbL)",
+ "funnel": [
+  {
+   "step": "All survey responses",
+   "n": 49191
+  },
+  {
+   "step": "Developers by profession",
+   "n": 37467
+  },
+  {
+   "step": "Employed or self-employed",
+   "n": 34146
+  },
+  {
+   "step": "Reported their pay",
+   "n": 19472
+  },
+  {
+   "step": "Gave years of experience (0–50)",
+   "n": 19297
+  },
+  {
+   "step": "Pay between $1k and $1M a year",
+   "n": 18862
+  },
+  {
+   "step": "Not an outlier for their country",
+   "n": 18042
+  },
+  {
+   "step": "Countries with 30+ responses",
+   "n": 17332
+  }
+ ],
+ "split": {
+  "train": 12132,
+  "calibration": 2600,
+  "test": 2600
+ },
+ "features": {
+  "categorical": 8,
+  "numeric": 2,
+  "skills": 103
+ },
+ "params": {
+  "num_leaves": 31,
+  "min_data_in_leaf": 60,
+  "learning_rate": 0.03,
+  "feature_fraction": 0.8,
+  "bagging_fraction": 0.8,
+  "lambda_l2": 1.0,
+  "rounds": 240
+ },
+ "results": {
+  "Global median": {
+   "mdape": 0.4261,
+   "mae_usd": 48472.0,
+   "r2_log": -0.0254,
+   "within_25": 0.3235,
+   "n": 2600
+  },
+  "Country median": {
+   "mdape": 0.3019,
+   "mae_usd": 32942.0,
+   "r2_log": 0.5433,
+   "within_25": 0.4262,
+   "n": 2600
+  },
+  "Ridge regression": {
+   "mdape": 0.2322,
+   "mae_usd": 26303.0,
+   "r2_log": 0.6854,
+   "within_25": 0.5327,
+   "n": 2600
+  },
+  "LightGBM": {
+   "mdape": 0.2164,
+   "mae_usd": 25202.0,
+   "r2_log": 0.6969,
+   "within_25": 0.5608,
+   "n": 2600
+  }
+ },
+ "range": {
+  "target": 0.8,
+  "coverage_raw": 0.7227,
+  "coverage": 0.8131,
+  "adjust": 0.0709,
+  "median_ratio": 2.406
+ },
+ "below_point": 0.4954,
+ "per_country": [
+  {
+   "country": "United States",
+   "n": 586,
+   "mdape": 0.1969,
+   "mdape_country_median": 0.2619,
+   "coverage": 0.8072
+  },
+  {
+   "country": "Germany",
+   "n": 235,
+   "mdape": 0.1601,
+   "mdape_country_median": 0.2167,
+   "coverage": 0.8383
+  },
+  {
+   "country": "United Kingdom",
+   "n": 182,
+   "mdape": 0.2163,
+   "mdape_country_median": 0.3102,
+   "coverage": 0.8626
+  },
+  {
+   "country": "India",
+   "n": 128,
+   "mdape": 0.336,
+   "mdape_country_median": 0.6631,
+   "coverage": 0.8438
+  },
+  {
+   "country": "France",
+   "n": 118,
+   "mdape": 0.2062,
+   "mdape_country_median": 0.2777,
+   "coverage": 0.8136
+  },
+  {
+   "country": "Canada",
+   "n": 107,
+   "mdape": 0.1953,
+   "mdape_country_median": 0.28,
+   "coverage": 0.7944
+  },
+  {
+   "country": "Ukraine",
+   "n": 80,
+   "mdape": 0.5802,
+   "mdape_country_median": 0.5521,
+   "coverage": 0.775
+  },
+  {
+   "country": "Brazil",
+   "n": 73,
+   "mdape": 0.3766,
+   "mdape_country_median": 0.5799,
+   "coverage": 0.6986
+  },
+  {
+   "country": "Netherlands",
+   "n": 71,
+   "mdape": 0.2104,
+   "mdape_country_median": 0.2653,
+   "coverage": 0.7746
+  },
+  {
+   "country": "Poland",
+   "n": 69,
+   "mdape": 0.2714,
+   "mdape_country_median": 0.3056,
+   "coverage": 0.8116
+  },
+  {
+   "country": "Italy",
+   "n": 66,
+   "mdape": 0.2114,
+   "mdape_country_median": 0.2389,
+   "coverage": 0.7879
+  },
+  {
+   "country": "Spain",
+   "n": 66,
+   "mdape": 0.2149,
+   "mdape_country_median": 0.3427,
+   "coverage": 0.8333
+  },
+  {
+   "country": "Australia",
+   "n": 65,
+   "mdape": 0.1677,
+   "mdape_country_median": 0.1667,
+   "coverage": 0.8
+  },
+  {
+   "country": "Sweden",
+   "n": 57,
+   "mdape": 0.1374,
+   "mdape_country_median": 0.1854,
+   "coverage": 0.8246
+  },
+  {
+   "country": "Switzerland",
+   "n": 43,
+   "mdape": 0.1363,
+   "mdape_country_median": 0.15,
+   "coverage": 0.907
+  },
+  {
+   "country": "Czechia",
+   "n": 43,
+   "mdape": 0.2016,
+   "mdape_country_median": 0.3,
+   "coverage": 0.8837
+  },
+  {
+   "country": "Austria",
+   "n": 32,
+   "mdape": 0.1981,
+   "mdape_country_median": 0.2369,
+   "coverage": 0.875
+  },
+  {
+   "country": "Portugal",
+   "n": 28,
+   "mdape": 0.1931,
+   "mdape_country_median": 0.311,
+   "coverage": 0.9286
+  },
+  {
+   "country": "Denmark",
+   "n": 26,
+   "mdape": 0.1637,
+   "mdape_country_median": 0.2238,
+   "coverage": 0.6923
+  },
+  {
+   "country": "Romania",
+   "n": 26,
+   "mdape": 0.2415,
+   "mdape_country_median": 0.4003,
+   "coverage": 0.9231
+  },
+  {
+   "country": "Belgium",
+   "n": 25,
+   "mdape": 0.1666,
+   "mdape_country_median": 0.35,
+   "coverage": 0.8
+  },
+  {
+   "country": "Norway",
+   "n": 22,
+   "mdape": 0.1407,
+   "mdape_country_median": 0.1327,
+   "coverage": 0.8636
+  },
+  {
+   "country": "Finland",
+   "n": 22,
+   "mdape": 0.1215,
+   "mdape_country_median": 0.1765,
+   "coverage": 0.9545
+  },
+  {
+   "country": "Greece",
+   "n": 21,
+   "mdape": 0.2938,
+   "mdape_country_median": 0.4444,
+   "coverage": 0.7619
+  },
+  {
+   "country": "South Africa",
+   "n": 21,
+   "mdape": 0.2496,
+   "mdape_country_median": 0.5443,
+   "coverage": 0.8095
+  },
+  {
+   "country": "Mexico",
+   "n": 21,
+   "mdape": 0.3734,
+   "mdape_country_median": 0.5625,
+   "coverage": 0.8095
+  },
+  {
+   "country": "Türkiye",
+   "n": 21,
+   "mdape": 0.4979,
+   "mdape_country_median": 0.5804,
+   "coverage": 0.6667
+  },
+  {
+   "country": "New Zealand",
+   "n": 21,
+   "mdape": 0.188,
+   "mdape_country_median": 0.1833,
+   "coverage": 0.8571
+  },
+  {
+   "country": "Israel",
+   "n": 20,
+   "mdape": 0.2158,
+   "mdape_country_median": 0.2,
+   "coverage": 0.9
+  },
+  {
+   "country": "Ireland",
+   "n": 19,
+   "mdape": 0.1057,
+   "mdape_country_median": 0.25,
+   "coverage": 0.7368
+  },
+  {
+   "country": "Hungary",
+   "n": 19,
+   "mdape": 0.349,
+   "mdape_country_median": 0.4118,
+   "coverage": 0.8421
+  },
+  {
+   "country": "Bulgaria",
+   "n": 17,
+   "mdape": 0.1993,
+   "mdape_country_median": 0.3733,
+   "coverage": 0.8824
+  },
+  {
+   "country": "Argentina",
+   "n": 17,
+   "mdape": 0.3879,
+   "mdape_country_median": 0.45,
+   "coverage": 0.6471
+  },
+  {
+   "country": "Japan",
+   "n": 15,
+   "mdape": 0.1901,
+   "mdape_country_median": 0.2347,
+   "coverage": 0.9333
+  },
+  {
+   "country": "Russia",
+   "n": 15,
+   "mdape": 0.3077,
+   "mdape_country_median": 0.3333,
+   "coverage": 0.8
+  },
+  {
+   "country": "Pakistan",
+   "n": 15,
+   "mdape": 0.5121,
+   "mdape_country_median": 0.6364,
+   "coverage": 0.7333
+  },
+  {
+   "country": "China",
+   "n": 13,
+   "mdape": 0.1779,
+   "mdape_country_median": 0.4,
+   "coverage": 0.9231
+  },
+  {
+   "country": "Colombia",
+   "n": 12,
+   "mdape": 0.6386,
+   "mdape_country_median": 0.7067,
+   "coverage": 0.5833
+  },
+  {
+   "country": "Bangladesh",
+   "n": 12,
+   "mdape": 0.2422,
+   "mdape_country_median": 0.4311,
+   "coverage": 0.75
+  },
+  {
+   "country": "Slovakia",
+   "n": 12,
+   "mdape": 0.2407,
+   "mdape_country_median": 0.4944,
+   "coverage": 0.6667
+  },
+  {
+   "country": "Serbia",
+   "n": 12,
+   "mdape": 0.3802,
+   "mdape_country_median": 0.5846,
+   "coverage": 0.75
+  },
+  {
+   "country": "Croatia",
+   "n": 11,
+   "mdape": 0.2404,
+   "mdape_country_median": 0.5,
+   "coverage": 0.6364
+  },
+  {
+   "country": "Chile",
+   "n": 10,
+   "mdape": 0.2087,
+   "mdape_country_median": 0.4788,
+   "coverage": 0.7
+  },
+  {
+   "country": "Iran",
+   "n": 9,
+   "mdape": 0.8602,
+   "mdape_country_median": 0.8422,
+   "coverage": 0.7778
+  },
+  {
+   "country": "Philippines",
+   "n": 8,
+   "mdape": 0.5775,
+   "mdape_country_median": 0.9096,
+   "coverage": 0.75
+  },
+  {
+   "country": "Taiwan",
+   "n": 8,
+   "mdape": 0.1507,
+   "mdape_country_median": 0.3,
+   "coverage": 0.875
+  },
+  {
+   "country": "Lithuania",
+   "n": 8,
+   "mdape": 0.1908,
+   "mdape_country_median": 0.3333,
+   "coverage": 0.75
+  },
+  {
+   "country": "Indonesia",
+   "n": 8,
+   "mdape": 0.3826,
+   "mdape_country_median": 0.5797,
+   "coverage": 0.875
+  }
+ ],
+ "importance": [
+  {
+   "feature": "country",
+   "label": "Country",
+   "mean_abs_shap": 0.4778790537378888
+  },
+  {
+   "feature": "years_pro",
+   "label": "Years of experience",
+   "mean_abs_shap": 0.14411775215110798
+  },
+  {
+   "feature": "org_size",
+   "label": "Company size",
+   "mean_abs_shap": 0.06469908193835207
+  },
+  {
+   "feature": "years_code",
+   "label": "Years coding",
+   "mean_abs_shap": 0.05295013880320002
+  },
+  {
+   "feature": "role",
+   "label": "Role",
+   "mean_abs_shap": 0.04364860415922611
+  },
+  {
+   "feature": "remote",
+   "label": "Work setup",
+   "mean_abs_shap": 0.0356398207147917
+  },
+  {
+   "feature": "lang_php",
+   "label": "PHP",
+   "mean_abs_shap": 0.029981202488948033
+  },
+  {
+   "feature": "industry",
+   "label": "Industry",
+   "mean_abs_shap": 0.029037690237241006
+  },
+  {
+   "feature": "education",
+   "label": "Education",
+   "mean_abs_shap": 0.018512621543711204
+  },
+  {
+   "feature": "plat_terraform",
+   "label": "Terraform",
+   "mean_abs_shap": 0.01683389217909842
+  },
+  {
+   "feature": "db_mysql",
+   "label": "MySQL",
+   "mean_abs_shap": 0.016604630790844028
+  },
+  {
+   "feature": "plat_kubernetes",
+   "label": "Kubernetes",
+   "mean_abs_shap": 0.015470653602287499
+  },
+  {
+   "feature": "lang_typescript",
+   "label": "TypeScript",
+   "mean_abs_shap": 0.012219027968801203
+  },
+  {
+   "feature": "db_microsoft_sql_server",
+   "label": "SQL Server",
+   "mean_abs_shap": 0.011878831321845144
+  },
+  {
+   "feature": "employment",
+   "label": "Employment",
+   "mean_abs_shap": 0.01182669719241036
+  },
+  {
+   "feature": "plat_datadog",
+   "label": "Datadog",
+   "mean_abs_shap": 0.01137147933926758
+  },
+  {
+   "feature": "lang_csharp",
+   "label": "C#",
+   "mean_abs_shap": 0.01134085884537695
+  },
+  {
+   "feature": "lang_bash_shell_all_shells",
+   "label": "Bash / Shell",
+   "mean_abs_shap": 0.00981300250285349
+  },
+  {
+   "feature": "db_redis",
+   "label": "Redis",
+   "mean_abs_shap": 0.00977913839876661
+  },
+  {
+   "feature": "db_mariadb",
+   "label": "MariaDB",
+   "mean_abs_shap": 0.009522013560282773
+  },
+  {
+   "feature": "plat_docker",
+   "label": "Docker",
+   "mean_abs_shap": 0.009191710367446506
+  },
+  {
+   "feature": "plat_amazon_web_services_aws",
+   "label": "AWS",
+   "mean_abs_shap": 0.009045420668231288
+  },
+  {
+   "feature": "lang_html_css",
+   "label": "HTML / CSS",
+   "mean_abs_shap": 0.00903635464787612
+  },
+  {
+   "feature": "lang_go",
+   "label": "Go",
+   "mean_abs_shap": 0.00879704933210251
+  },
+  {
+   "feature": "manager",
+   "label": "IC or manager",
+   "mean_abs_shap": 0.008573910648598249
+  }
+ ],
+ "skills_group_mean_abs_shap": 0.09303781679194503,
+ "india": {
+  "country": "India",
+  "n": 128,
+  "mdape": 0.336,
+  "mdape_country_median": 0.6631,
+  "coverage": 0.8438
+ }
+}
